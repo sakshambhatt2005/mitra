@@ -1,0 +1,150 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 50 33% 98%;
+    --foreground: 147 30% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 147 30% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 147 30% 16%;
+
+    --primary: 147 30% 33%;
+    --primary-foreground: 50 33% 98%;
+
+    --secondary: 81 30% 57%;
+    --secondary-foreground: 147 30% 16%;
+
+    --muted: 50 33% 94%;
+    --muted-foreground: 147 15% 40%;
+
+    --accent: 49 93% 64%;
+    --accent-foreground: 27 31% 26%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 50 33% 98%;
+
+    --border: 147 10% 86%;
+    --input: 147 10% 86%;
+    --ring: 147 30% 33%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 147 30% 10%;
+    --foreground: 50 33% 98%;
+
+    --card: 147 30% 12%;
+    --card-foreground: 50 33% 98%;
+
+    --popover: 147 30% 12%;
+    --popover-foreground: 50 33% 98%;
+
+    --primary: 81 30% 57%;
+    --primary-foreground: 147 30% 16%;
+
+    --secondary: 147 30% 33%;
+    --secondary-foreground: 50 33% 98%;
+
+    --muted: 147 15% 20%;
+    --muted-foreground: 50 10% 70%;
+
+    --accent: 49 93% 54%;
+    --accent-foreground: 147 30% 16%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 50 33% 98%;
+
+    --border: 147 15% 25%;
+    --input: 147 15% 25%;
+    --ring: 81 30% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/60 rounded-full transition-colors hover:bg-primary;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .glass-input {
+    @apply bg-white/50 backdrop-blur-sm border border-white/20 focus:border-primary/50 focus:ring-primary/30;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/90 h-10 px-4 py-2;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-accent text-accent-foreground hover:bg-accent/90 h-10 px-4 py-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2;
+  }
+}
+
+/* Page transitions */
+.page-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
