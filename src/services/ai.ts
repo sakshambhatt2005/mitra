@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { useLanguage } from '@/contexts/LanguageContext';
 
 // Initialize the Google Generative AI with the provided API key
-const genAI = new GoogleGenerativeAI("AIzaSyA38elxZFKPzTs6tFxVa1tHytMf0Zu6D-Y");
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 
 // Get the specific model (using the correct model name)
 const model = genAI.getGenerativeModel({ 

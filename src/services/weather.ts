@@ -1,4 +1,4 @@
-const API_KEY = '9556d7d93f85030fc3692c6b69f4e5d3';
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const BASE_URL = 'https://api.openweathermap.org/data/2.5';
 
 // City coordinates for more accurate data
