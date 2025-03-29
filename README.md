@@ -1,69 +1,140 @@
-# Welcome to your Lovable project
+# Mitra - Your Farming Companion 🌾
 
-## Project info
+## Project Overview
 
-**URL**: https://lovable.dev/projects/e388bed4-5ad9-4e54-94e8-4ac2d77b7e39
+Mitra is a comprehensive agricultural assistance platform designed to empower farmers with real-time information and AI-powered insights. The application provides weather forecasts, market prices, and crop-specific advisory services in both English and Hindi.
 
-## How can I edit this code?
+### Key Features
 
-There are several ways of editing your application.
+- 🌤️ **Real-time Weather Information**
+  - 7-day weather forecast for major Indian cities
+  - Temperature, humidity, rainfall, and wind speed data
+  - Weather impact analysis for farming activities
 
-**Use Lovable**
+- 💰 **Market Prices**
+  - Live market prices for various crops
+  - Price trends and fluctuations
+  - Regional price comparisons
+  - Nearby mandi information
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e388bed4-5ad9-4e54-94e8-4ac2d77b7e39) and start prompting.
+- 🌱 **Crop Advisory**
+  - AI-powered crop-specific recommendations
+  - Irrigation guidance
+  - Pest control suggestions
+  - Fertilizer recommendations
+  - Bilingual support (English & Hindi)
 
-Changes made via Lovable will be committed automatically to this repo.
+- 📱 **User-Friendly Interface**
+  - Responsive design for all devices
+  - Intuitive navigation
+  - Dark/Light mode support
+  - Bilingual interface
 
-**Use your preferred IDE**
+## Dependencies
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Core Technologies
+- Node.js >= 18.0.0
+- npm >= 9.0.0
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+### Frontend Dependencies
+```json
+{
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@hookform/resolvers": "^3.9.0",
+    "@radix-ui/react-*": "^1.0.0 - ^2.2.1",
+    "@tanstack/react-query": "^5.56.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "lucide-react": "^0.462.0",
+    "next-themes": "^0.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hook-form": "^7.53.0",
+    "react-router-dom": "^6.26.2",
+    "recharts": "^2.12.7",
+    "sonner": "^1.5.0",
+    "tailwind-merge": "^2.5.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.9.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.11",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
+  }
+}
 ```
 
-**Edit a file directly in GitHub**
+## Setup Instructions
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+1. Install Node.js and npm from [nodejs.org](https://nodejs.org/)
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/sakshambhatt2005/mitra.git
+   cd mitra
+   ```
 
-**Use GitHub Codespaces**
+### Installation
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2. Create environment variables:
+   - Copy `.env.example` to `.env`:
+     ```bash
+     cp .env.example .env
+     ```
+   - Add your API keys to `.env`:
+     ```
+     VITE_WEATHER_API_KEY=your_openweathermap_api_key_here
+     VITE_GEMINI_API_KEY=your_gemini_api_key_here
+     ```
 
-## What technologies are used for this project?
+### Running the Application
+1. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:8080`
 
-This project is built with .
+2. Build for production:
+   ```bash
+   npm run build
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Basic Usage
+1. **Weather Information**
+   - Select a city from the dropdown
+   - View current weather and 7-day forecast
+   - Check weather impact on farming activities
 
-## How can I deploy this project?
+2. **Market Prices**
+   - Select your state
+   - View crop prices and trends
+   - Compare prices across regions
 
-Simply open [Lovable](https://lovable.dev/projects/e388bed4-5ad9-4e54-94e8-4ac2d77b7e39) and click on Share -> Publish.
+3. **Crop Advisory**
+   - Select your crop
+   - Choose your region and season
+   - Get AI-powered recommendations
 
-## I want to use a custom domain - is that possible?
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+- OpenWeatherMap API for weather data
+- Google Generative AI for crop advisory
+- All contributors and supporters
